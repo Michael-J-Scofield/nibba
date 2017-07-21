@@ -1,6 +1,6 @@
 {
   "name": "nibba",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Convert regular old boring normie text to nibba",
   "main": "nibba.js",
   "scripts": {

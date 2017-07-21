@@ -30,7 +30,6 @@
             }
 
             if (!string.includes('🅱️')) {
-
               var stringArray = string.split(' ');
               for  (var str in stringArray) {
                 var contains = ['A', 'a', 'O', 'o', 'E', 'e', 'U', 'u', 'I', 'i', 'S', 's', 'Y', 'y'];
@@ -45,15 +44,14 @@
                 stringArray[str] = word;
               }
               string = stringArray.join(' ');
-
-            
+            }
 
             return string;
         },
 
     };
 
-    if (/(^|\/)nibba(\.js)?$/.test(process.argv[1])) {
+    if (/(^|\/)nibba(\.js)?$/) {
         if (undefined !== process.argv[2]) {
             console.log(nibba.convert(process.argv[2]));
         } else {

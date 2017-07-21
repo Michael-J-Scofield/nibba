@@ -28,8 +28,8 @@
             for (var i = 0, len = replace_double.length; i < len; i++) {
               string = string.split(replace_double[i]).join('🅱️🅱️');
             }
-            
-            if (!string.includes('🅱️')) {
+
+            if (nibba.occurrences(string, '🅱️') < 2) {
               var stringArray = string.split(' ');
               for  (var str in stringArray) {
                 var contains = ['A', 'a', 'O', 'o', 'E', 'e', 'U', 'u', 'I', 'i', 'S', 's', 'Y', 'y'];
@@ -48,6 +48,31 @@
 
             return string;
         },
+
+        /** Function that count occurrences of a substring in a string;
+         * @param {String} string               The string
+         * @param {String} subString            The sub string to search for
+         * @param {Boolean} [allowOverlapping]  Optional. (Default:false)
+         *
+         */
+        occurrences: function(string, subString, allowOverlapping) {
+          string += "";
+          subString += "";
+          if (subString.length <= 0) return (string.length + 1);
+
+          var n = 0,
+              pos = 0,
+              step = allowOverlapping ? 1 : subString.length;
+
+          while (true) {
+              pos = string.indexOf(subString, pos);
+              if (pos >= 0) {
+                  ++n;
+                  pos += step;
+              } else break;
+          }
+          return n;
+        }
 
     };
 

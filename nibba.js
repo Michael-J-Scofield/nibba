@@ -46,7 +46,7 @@
               }
               string = stringArray.join(' ');
 
-            }
+            
 
             return string;
         },

@@ -28,7 +28,7 @@
             for (var i = 0, len = replace_double.length; i < len; i++) {
               string = string.split(replace_double[i]).join('🅱️🅱️');
             }
-
+            
             if (!string.includes('🅱️')) {
               var stringArray = string.split(' ');
               for  (var str in stringArray) {
@@ -51,7 +51,7 @@
 
     };
 
-    if (/(^|\/)nibba(\.js)?$/) {
+    if (/(^|\/)nibba(\.js)?$/.test(process.argv[1])) {
         if (undefined !== process.argv[2]) {
             console.log(nibba.convert(process.argv[2]));
         } else {

@@ -22,4 +22,9 @@ Is the 🅱️ig Ma🅱️ ma🅱️ine fixed?
 var nibba = require('nibba');
 
 console.log(nibba.convert('Is the big mac machine fixed?')); //Is the 🅱️ig Ma🅱️ ma🅱️ine fixed?
+
+// Optional argument
+// nibba.convert(string, mockify = true); Is set to false by default, example:
+
+console.log(nibba.convert('is the big mag machine fixed?', mockify = true)); //Is tHe 🅱️Ig mAg mA🅱️HiNe fIxEd?
 ```

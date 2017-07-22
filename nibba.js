@@ -18,7 +18,7 @@
          * @param string string Regular ol' text to convert
          * @return string
          */
-        convert: function (string, mockify = false) {
+        convert: function (string, mockify) {
             if (mockify) {
               string = nibba.mockify(string);
             }

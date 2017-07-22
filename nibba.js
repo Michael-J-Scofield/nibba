@@ -18,7 +18,11 @@
          * @param string string Regular ol' text to convert
          * @return string
          */
-        convert: function (string) {
+        convert: function (string, mockify = false) {
+            if (mockify) {
+              string = nibba.mockify(string);
+            }
+
             var replace = ['B', 'b', 'C', 'c'];
             for (var i = 0, len = replace.length; i < len; i++) {
               string = string.split(replace[i]).join('🅱️');
@@ -72,6 +76,24 @@
               } else break;
           }
           return n;
+        },
+
+        /**
+         * Convert normal text to mockified string
+         * @type {string}
+         */
+        mockify: function(string) {
+          const textArray = string.toLowerCase().split('');
+
+          function capitalizeEven(char, index) {
+              if (index % 2 === 0) {
+                  return char.toUpperCase();
+              } else {
+                  return char;
+              }
+          }
+
+          return textArray.map(capitalizeEven).join('');
         }
 
     };
